@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Registro e Inicio Sesion LIBAOO </title>
+      <link rel="stylesheet" href="estilo.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+   <body>
+      <!-- crear clase para inicio y registro de usuarios-->
+      <div class="wrapper">
+         <div class="title-text"><!-- separacion por clases(diferenciar funciones)-->
+            <div class="title login">
+               Inicio de Sesion
+            </div>
+            <div class="title signup">
+               Registrarse
+            </div>
+         </div>
+         <div class="form-container">
+            <div class="slide-controls"><!-- se crean los respectivos campos-->
+               <input type="radio" name="slide" id="login" checked>
+               <input type="radio" name="slide" id="signup">
+               <label for="login" class="slide login">Iniciar Sesion</label>
+               <label for="signup" class="slide signup">Registrarme</label>
+               <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+               <form action="#" class="login">
+                  <div class="field">
+                     <input type="email" placeholder="Correo Electronico" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Contraseña" required>
+                  </div>
+                  <div class="pass-link"><!--recuperacion de contraseña -->
+
+                     <a href="#">Olvide mi Contraseña</a>
+                  </div>
+                  <div class="field btn"><!-- se crea un boton para el ingreso -->
+
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Ingresar">
+                  </div>
+                  <!--creamos el registro de nuevo usuario, en caso de no tener -->
+
+                  <div class="signup-link">
+                     No tengo Cuenta <a href="">Registrarme Ahora</a>
+                  </div>
+               </form>
+               <form action="#" class="signup">
+                  <div class="field">
+                     <input type="email" placeholder="Correo Electronico" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Contraseña" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" placeholder="Confirmar Contraseña" required>
+                  </div>
+                  <div class="field btn">
+                     <div class="btn-layer"></div>
+                     <input type="submit" value="Registrarme">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!--utilizamos javascript para mostrar por separado los formularios-->
+      <script>
+         const loginText = document.querySelector(".title-text .login");/*se capturan las clases(div) */
+         const loginForm = document.querySelector("form.login");
+         const loginBtn = document.querySelector("label.login");
+         const signupBtn = document.querySelector("label.signup");
+         const signupLink = document.querySelector("form .signup-link a");
+         signupBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "-50%";
+           loginText.style.marginLeft = "-50%";
+         });
+         loginBtn.onclick = (()=>{
+           loginForm.style.marginLeft = "0%";
+           loginText.style.marginLeft = "0%";
+         });
+         signupLink.onclick = (()=>{
+           signupBtn.click();
+           return false;
+         });
+      </script>
+      <!--agregamos un pie de pagina para sumistrar informacion de los desarrolladores y derechos-->
+<footer class="pie-pagina">
+        <div class="grupo-2">
+            <small><b>LIBAOO</b> - Todos los Derechos Reservados-2022 </small>
+        </div>
+    </footer>
+   </body>
+</html>
